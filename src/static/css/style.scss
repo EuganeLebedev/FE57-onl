@@ -6,6 +6,15 @@
     position: relative;
     background-size: cover;
     background-position: center;
+    padding: 230px 0 120px;
+
+    @media (max-width: 1024px) {
+        padding: 258px 0 126px;
+    }
+    @media (max-width: 480px) {
+        padding: 125px 0 52px;
+    }
+    
     
 
     &::before {
@@ -13,130 +22,22 @@
         content: "";
         position: absolute;
         background-color: #252B49;
+        left: 0;
+        top: 0;
         width: 100%;
         height: 100%;
         opacity: 0.8;
 
     }
 
-    .header {
-        &__container {
-            @include container();
-            position: relative;
-            z-index: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-
-            &::after {
-                content: "";
-                position: absolute;
-                background-color: #BABBC5;
-                display: block;
-                width: 100%;
-                height: 1px;
-                top: 100%;
-
-                @media (max-width: 320px) {
-                    display: none;
-                }
-                
-            }
-        }
-
-        &__logo {
-            display: flex;
-
-            svg {
-                width: 184px;
-                height: 26px;
-
-                @media (max-width: 320px) {
-                    width: 104px;
-                    height: 15px;
-                }
-            }
-        }
-    }
-
-    .nav {
-
-        &__btn {
-            display: none;
-
-            @media (max-width: 320px) {
-                display: flex;
-            }
-
-            svg {
-                width: 55px;
-                height: 56px;
-            }   
-        }
-
-
-        &__links {
-            list-style: none;
-            display: flex;
-            overflow: scroll;
-            justify-content: space-between;
-
-            @media (max-width: 320px) {
-                display: none;
-            }
-
-            li {
-                min-width: 134px;
-                width: 100%;
-                text-align: center;
-                padding: 36px 0;
-
-                @media (max-width: 1024px) {
-                    min-width: 112px;
-                }
-            }
-        }
-
-        &__link {
-            @include font(13px, 15px, 700);
-            text-decoration: none;
-            text-transform: uppercase;
-            position: relative;
-            text-align: center;
-            display: inline-block;
-            width: 100%;
-
-
-            &:hover::after {
-                @include nav_after(#BABBC5);
-            }
-
-            &:active {
-                color: #E71414;
-
-            }
-
-            &:active::after {
-                @include nav_after(#E71414);
-            }
-        }
-
-        
-    }
-
     &__container {
         @include container();
         position: relative;
         z-index: 1;
-        padding: 130px 15px 120px;
+        padding: 0 15px;
         text-align: center;
-
-        @media (max-width: 1024px) {
-            padding: 158px 15px 126px;
-        }
-        @media (max-width: 320px) {
-            padding: 70px 5px 52px;
+        @media (max-width: 480px) {
+            padding: 0 20px;
         }
     }
 
@@ -145,14 +46,13 @@
         text-transform: uppercase;
         text-align: center;
         color: #fff;
-        padding: 0 15px;
         margin-bottom: 34px;
 
         @media (max-width: 1024px) {
             @include font(48px, 56px, 900);
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 480px) {
             @include font(36px, 42px, 900);
             margin-bottom: 32px;
         }
@@ -163,7 +63,6 @@
         @include font(24px, 28px, 400);
         text-align: center;
         color: #fff;
-        padding: 0 80px;
         margin-bottom: 80px;
 
         @media (max-width: 1024px) {
@@ -172,7 +71,7 @@
             margin-bottom: 90px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 480px) {
             @include font(14px, 16px, 400);
             padding: 0 5px;
             margin-bottom: 49px;
@@ -191,8 +90,8 @@
         padding: 26px 0;
         text-decoration: none;
 
-        @media (max-width: 320px) {
-            max-width: 280px;
+        @media (max-width: 480px) {
+            max-width: none;
             padding: 16px 0;
         }
 
@@ -205,4 +104,119 @@
             box-shadow: 4px 4px 30px 0px #FF4343;
         }
     }
+}
+
+.header {
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    &__container {
+        @include container();
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: #BABBC5;
+            width: calc(100% - 30px);
+            height: 1px;
+            top: 100%;
+            left: 15px;
+
+            @media (max-width: 480px) {
+                display: none;
+            }
+            
+        }
+    }
+
+    &__logo {
+        display: flex;
+
+        svg {
+            width: 184px;
+            height: 26px;
+
+            @media (max-width: 480px) {
+                width: 104px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+.nav {
+
+    &__btn {
+        display: none;
+
+        @media (max-width: 480px) {
+            display: flex;
+        }
+
+        svg {
+            width: 55px;
+            height: 56px;
+        }   
+    }
+
+
+    &__links {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 480px) {
+            display: none;
+        }
+
+        li {
+            min-width: 134px;
+            width: 100%;
+            text-align: center;
+
+            a {
+                padding: 36px 0;
+            }
+
+            @media (max-width: 1024px) {
+                min-width: 112px;
+            }
+            @media (max-width: 780px) {
+                min-width: auto;
+            }
+        }
+    }
+
+    &__link {
+        @include font(13px, 15px, 700);
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+
+
+        &:hover::after {
+            @include nav_after(#BABBC5);
+        }
+
+        &:active {
+            color: #E71414;
+
+        }
+
+        &:active::after {
+            @include nav_after(#E71414);
+        }
+    }
+    
 }
