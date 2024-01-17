@@ -1,6 +1,6 @@
-@import '/src/static/css/mixins.scss'; 
-@import '/src/static/css/reset.scss'; 
-@import '/src/static/css/vars.scss'; 
+@import '/src/static/css/mixins.scss';
+@import '/src/static/css/reset.scss';
+@import '/src/static/css/vars.scss';
 
 .banner {
     position: relative;
@@ -11,11 +11,12 @@
     @media (max-width: 1024px) {
         padding: 258px 0 126px;
     }
+
     @media (max-width: 767px) {
         padding: 125px 0 52px;
     }
-    
-    
+
+
 
     &::before {
         z-index: 0;
@@ -36,6 +37,7 @@
         z-index: 1;
         padding: 0 15px;
         text-align: center;
+
         @media (max-width: 767px) {
             padding: 0 20px;
         }
@@ -89,6 +91,7 @@
         text-align: center;
         padding: 26px 0;
         text-decoration: none;
+        text-transform: uppercase;
 
         @media (max-width: 767px) {
             max-width: none;
@@ -133,7 +136,7 @@
             @media (max-width: 767px) {
                 display: none;
             }
-            
+
         }
     }
 
@@ -162,7 +165,7 @@
         svg {
             width: 55px;
             height: 56px;
-        }   
+        }
     }
 
 
@@ -191,6 +194,7 @@
             @media (max-width: 1024px) {
                 min-width: 112px;
             }
+
             @media (max-width: 780px) {
                 min-width: max-content;
             }
@@ -220,5 +224,5 @@
             @include nav_after(#E71414);
         }
     }
-    
+
 }
