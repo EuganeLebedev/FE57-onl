@@ -11,7 +11,7 @@
     @media (max-width: 1024px) {
         padding: 258px 0 126px;
     }
-    @media (max-width: 480px) {
+    @media (max-width: 767px) {
         padding: 125px 0 52px;
     }
     
@@ -36,7 +36,7 @@
         z-index: 1;
         padding: 0 15px;
         text-align: center;
-        @media (max-width: 480px) {
+        @media (max-width: 767px) {
             padding: 0 20px;
         }
     }
@@ -52,7 +52,7 @@
             @include font(48px, 56px, 900);
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 767px) {
             @include font(36px, 42px, 900);
             margin-bottom: 32px;
         }
@@ -63,18 +63,18 @@
         @include font(24px, 28px, 400);
         text-align: center;
         color: #fff;
-        margin-bottom: 80px;
+        margin: 0 auto 80px;
+        max-width: 1000px;
 
         @media (max-width: 1024px) {
             @include font(18px, 21px, 400);
-            padding: 0 110px;
-            margin-bottom: 90px;
+            margin: 0 auto 90px;
+            max-width: 750px;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 767px) {
             @include font(14px, 16px, 400);
-            padding: 0 5px;
-            margin-bottom: 49px;
+            margin: 0 auto 49px;
         }
 
     }
@@ -90,7 +90,7 @@
         padding: 26px 0;
         text-decoration: none;
 
-        @media (max-width: 480px) {
+        @media (max-width: 767px) {
             max-width: none;
             padding: 16px 0;
         }
@@ -130,7 +130,7 @@
             top: 100%;
             left: 15px;
 
-            @media (max-width: 480px) {
+            @media (max-width: 767px) {
                 display: none;
             }
             
@@ -141,12 +141,10 @@
         display: flex;
 
         svg {
-            width: 184px;
-            height: 26px;
+            max-width: 184px;
 
-            @media (max-width: 480px) {
-                width: 104px;
-                height: 15px;
+            @media (max-width: 767px) {
+                max-width: 104px;
             }
         }
     }
@@ -157,7 +155,7 @@
     &__btn {
         display: none;
 
-        @media (max-width: 480px) {
+        @media (max-width: 767px) {
             display: flex;
         }
 
@@ -173,7 +171,11 @@
         display: flex;
         justify-content: space-between;
 
-        @media (max-width: 480px) {
+        @media (max-width: 780px) {
+            column-gap: 20px;
+        }
+
+        @media (max-width: 767px) {
             display: none;
         }
 
@@ -190,7 +192,7 @@
                 min-width: 112px;
             }
             @media (max-width: 780px) {
-                min-width: auto;
+                min-width: max-content;
             }
         }
     }
