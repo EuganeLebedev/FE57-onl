@@ -1,0 +1,228 @@
+@import '/src/static/css/mixins.scss';
+@import '/src/static/css/reset.scss';
+@import '/src/static/css/vars.scss';
+
+.banner {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 230px 0 120px;
+
+    @media (max-width: 1024px) {
+        padding: 258px 0 126px;
+    }
+
+    @media (max-width: 767px) {
+        padding: 125px 0 52px;
+    }
+
+
+
+    &::before {
+        z-index: 0;
+        content: "";
+        position: absolute;
+        background-color: #252B49;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+
+    }
+
+    &__container {
+        @include container();
+        position: relative;
+        z-index: 1;
+        padding: 0 15px;
+        text-align: center;
+
+        @media (max-width: 767px) {
+            padding: 0 20px;
+        }
+    }
+
+    &__title {
+        @include font(64px, 75px, 900);
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 34px;
+
+        @media (max-width: 1024px) {
+            @include font(48px, 56px, 900);
+        }
+
+        @media (max-width: 767px) {
+            @include font(36px, 42px, 900);
+            margin-bottom: 32px;
+        }
+
+    }
+
+    &__text {
+        @include font(24px, 28px, 400);
+        text-align: center;
+        color: #fff;
+        margin: 0 auto 80px;
+        max-width: 1000px;
+
+        @media (max-width: 1024px) {
+            @include font(18px, 21px, 400);
+            margin: 0 auto 90px;
+            max-width: 750px;
+        }
+
+        @media (max-width: 767px) {
+            @include font(14px, 16px, 400);
+            margin: 0 auto 49px;
+        }
+
+    }
+
+    &__btn {
+        @include font(24px, 28px, 900);
+        display: inline-block;
+        max-width: 370px;
+        width: 100%;
+        color: #FFF;
+        background-color: #FF4343;
+        text-align: center;
+        padding: 26px 0;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        @media (max-width: 767px) {
+            max-width: none;
+            padding: 16px 0;
+        }
+
+        &:hover {
+            background-color: #E71414;
+        }
+
+        &:active {
+            background-color: #FF4343;
+            box-shadow: 4px 4px 30px 0px #FF4343;
+        }
+    }
+}
+
+.header {
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    &__container {
+        @include container();
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: #BABBC5;
+            width: calc(100% - 30px);
+            height: 1px;
+            top: 100%;
+            left: 15px;
+
+            @media (max-width: 767px) {
+                display: none;
+            }
+
+        }
+    }
+
+    &__logo {
+        display: flex;
+
+        svg {
+            max-width: 184px;
+
+            @media (max-width: 767px) {
+                max-width: 104px;
+            }
+        }
+    }
+}
+
+.nav {
+
+    &__btn {
+        display: none;
+
+        @media (max-width: 767px) {
+            display: flex;
+        }
+
+        svg {
+            width: 55px;
+            height: 56px;
+        }
+    }
+
+
+    &__links {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 780px) {
+            column-gap: 20px;
+        }
+
+        @media (max-width: 767px) {
+            display: none;
+        }
+
+        li {
+            min-width: 134px;
+            width: 100%;
+            text-align: center;
+
+            a {
+                padding: 36px 0;
+            }
+
+            @media (max-width: 1024px) {
+                min-width: 112px;
+            }
+
+            @media (max-width: 780px) {
+                min-width: max-content;
+            }
+        }
+    }
+
+    &__link {
+        @include font(13px, 15px, 700);
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+
+
+        &:hover::after {
+            @include nav_after(#BABBC5);
+        }
+
+        &:active {
+            color: #E71414;
+
+        }
+
+        &:active::after {
+            @include nav_after(#E71414);
+        }
+    }
+
+}
