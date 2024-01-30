@@ -3,14 +3,14 @@
     .swiper {
       width: 100%;
       height: 100%;
-      padding-bottom: 132px;
+      margin-bottom: 132px;
 
       @media (max-width: 1024px) {
-        padding-bottom: 93px;
+        margin-bottom: 93px;
       }
 
       @media (max-width: 767px) {
-        padding-bottom: 55px;
+        margin-bottom: 55px;
       }
 
     }
@@ -38,15 +38,25 @@
       }
 
       &__data {
-        margin: 135px 0 125px;
-        padding: 0 15px;
+        padding: 120px 15px 125px;
+        margin: 0 auto;
+        max-width: 482px;
+        transform: translateX(-35px);
+
 
         @media (max-width: 1024px) {
-          margin: 63px 0 110px;
+          max-width: 333px;
+          padding: 45px 15px 110px;
+        }
+
+        @media (max-width: 1280px) {
+          transform: translateX(0);
         }
 
         @media (max-width: 767px) {
-          margin: 20px 0 100px;
+          transform: translateX(0);
+          max-width: 310px;
+          padding: 5px 15px 100px;
         }
 
       }
@@ -59,18 +69,22 @@
         font-weight: 400;
         text-transform: capitalize;
         text-align: left;
-        max-width: 525px;
-        margin: 0 0 20px 113px;
+        
+        transform: translate(0, 15px);
+        margin-bottom: 37px;
+        
+
+        // margin: 0 0 20px 113px;
 
         @media (max-width: 1024px) {
           font-size: 24px;
           line-height: 32px;
-          margin: 0 60px 17px 74px;
+          // margin: 0 60px 17px 74px;
         }
 
         @media (max-width: 767px) {
           margin: 0;
-          margin-bottom: 63px;
+          margin-bottom: 45px;
           text-align: center;
         }
       }
@@ -83,14 +97,15 @@
         font-weight: 700;
         text-transform: uppercase;
         text-align: left;
-        margin-left: 113px;
+        // margin-left: 113px;
+
         @media (max-width: 1024px) {
           font-size: 12px;
           line-height: 14px;
-          margin-left: 72px;
+          // margin-left: 72px;
         }
         @media (max-width: 767px) {
-          margin-left: 2px;
+          // margin-left: 2px;
         }
       }
 
@@ -147,10 +162,21 @@
       opacity: 1;
       background: #fff;
       border: 1px solid #7E5D6F;
+      transition: border linear 0.2s;
+
       @media (max-width: 1024px) {
         width: 9.5px;
         height: 9.5px;
       }
+
+      &:hover {
+        border: 3px solid #7E5D6F;
+      }
+
+      &:active {
+        border: 5px solid #7E5D6F;
+      }
+
     }
 
     .swiper-pagination-bullet-active {
